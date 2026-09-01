@@ -1,0 +1,7 @@
+import subprocess
+
+PORT = 8000
+print(f"Starting tunnel for port {PORT}...")
+
+# Uses built-in SSH to route traffic through localhost.run
+subprocess.run(["ssh", "-R", f"80:localhost:{PORT}", "nokey@localhost.run"])
